@@ -21,8 +21,6 @@ s_origin_x = int(s_width/2) - int(t_width/2)
 s_origin_y = int(s_height/2) - int(t_height/2) - (t_height*3)
 
 # Tiles Map
-m_x = 0
-m_y = 0
 m_side = 8
 
 screen = pygame.display.set_mode((s_width, s_height), 0, 32)
