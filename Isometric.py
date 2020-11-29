@@ -42,7 +42,7 @@ while True:
             s_x = (m_x - m_y) * int(t_width/2) + s_origin_x
             s_y = (m_x + m_y) * int(t_height/2) + s_origin_y
             screen.blit(tile,(s_x, s_y))
-            sleep(0.3)
+            sleep(0.2)
             pygame.display.update()
 
     # s_map_x = (x / int(t_width/2) + y / int(t_height/2))/2 
