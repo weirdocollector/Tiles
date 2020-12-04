@@ -18,8 +18,8 @@ t_height = 64
 t_width = t_height * 2
 
 # Screen Map Origin
-s_origin_x = int(s_width/2) - int(t_width/2)                    # Middle X axis
-s_origin_y = int(s_height/2) - int(t_height/2) - (t_height*4)   # Middle Y axis - Offset
+s_origin_x = s_width //2 - t_width //2                  # Middle X axis
+s_origin_y = s_height //2 - t_height //2 - t_height*4   # Middle Y axis - Offset
 
 # Tiles Map
 m_tiles =  [[1,1,1,1,1,1,1,1],
@@ -52,8 +52,8 @@ while True:
 
     for m_x in range(m_side):
         for m_y in range(m_side):
-            s_x = (m_x - m_y) * int(t_width/2) + s_origin_x
-            s_y = (m_x + m_y) * int(t_height/2) + s_origin_y
+            s_x = (m_x - m_y) * t_width //2 + s_origin_x
+            s_y = (m_x + m_y) * t_height //2 + s_origin_y
             screen.blit(tiles[m_tiles[m_x][m_y]],(s_x, s_y))
             # sleep(0.2)
             # pygame.display.update()
