@@ -17,15 +17,16 @@ t_height = 64
 t_width = t_height * 2
 
 # Screen Map Origin
-s_origin_x = int(s_width/2) - int(t_width/2)
-s_origin_y = int(s_height/2) - int(t_height/2) - (t_height*3)
+s_origin_x = s_width //2 - t_width //2
+s_origin_y = s_height //2 - t_height //2 - t_height*4
+
 
 # Tiles Map
 m_side = 8
 
 screen = pygame.display.set_mode((s_width, s_height), 0, 32)
 pygame.display.set_caption('Tiles Test')
-tile = pygame.image.load('Ort_Tile.png').convert_alpha()
+tile = pygame.image.load('Flat_Tile.png').convert_alpha()
 
 while True:
 
@@ -38,8 +39,8 @@ while True:
 
     for m_x in range(m_side):
         for m_y in range(m_side):
-            s_x = (m_x - m_y) * int(t_width/2) + s_origin_x
-            s_y = (m_x + m_y) * int(t_height/2) + s_origin_y
+            s_x = (m_x - m_y) * t_width //2 + s_origin_x
+            s_y = (m_x + m_y) * t_height //2 + s_origin_y
             screen.blit(tile,(s_x, s_y))
 
     # s_map_x = (x / int(t_width/2) + y / int(t_height/2))/2 
