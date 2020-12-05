@@ -59,14 +59,14 @@ m_pickups[0]= [[0,0,0,0,0,0,0,0],
                [0,1,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0]]             
 
-m_pickups[1]= [[0,1,0,0,0,0,1,0], 
+m_pickups[1]= [[0,0,0,0,0,0,1,0], 
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0]]  
+               [0,1,0,0,0,0,1,0]]  
 
 # for key in range (0):
 map_screen[0] = m_tiles[0]
@@ -104,8 +104,8 @@ while True:
                 s_y = (m_x + m_y) * t_height //2 + (s_origin_y- t_height * m_z)
                 if map_screen[m_z][m_x][m_y] != 5:  # Only draw non-empty tiles
                     screen.blit(tiles[map_screen[m_z][m_x][m_y]],(s_x, s_y)) 
-                    if m_pickups[m_z][m_x][m_y] != 0:  # Only draw non-empty pickups
-                        screen.blit(pickup[m_pickups[m_z][m_x][m_y]],(s_x, s_y - t_height //2)) 
+                if m_pickups[m_z][m_x][m_y] != 0:  # Only draw non-empty pickups
+                    screen.blit(pickup[m_pickups[m_z][m_x][m_y]],(s_x, s_y - t_height //2)) 
                 # sleep(0.2)
                 # pygame.display.update()
 
