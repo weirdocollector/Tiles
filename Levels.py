@@ -54,13 +54,13 @@ map_screen[0] = m_tiles[0]
 map_screen[1] = m_tiles[1]
 
 screen = pygame.display.set_mode((s_width, s_height), 0, 32)
-pygame.display.set_caption('Tiles Test')
-tile_0 = pygame.image.load('Flat_Tile.png').convert_alpha() 
-tile_1 = pygame.image.load('Cube.png').convert_alpha()
-tile_2 = pygame.image.load('Half_Cube.png').convert_alpha()
-tile_3 = pygame.image.load('Slope_S.png').convert_alpha()
-tile_4 = pygame.image.load('Slope_End_S.png').convert_alpha()
-tile_5 = pygame.image.load('Empty_Tile.png').convert_alpha()
+pygame.display.set_caption('Assets/Tiles Test')
+tile_0 = pygame.image.load('Assets/Flat_Tile.png').convert_alpha() 
+tile_1 = pygame.image.load('Assets/Cube.png').convert_alpha()
+tile_2 = pygame.image.load('Assets/Half_Cube.png').convert_alpha()
+tile_3 = pygame.image.load('Assets/Slope_S.png').convert_alpha()
+tile_4 = pygame.image.load('Assets/Slope_End_S.png').convert_alpha()
+tile_5 = pygame.image.load('Assets/Empty_Tile.png').convert_alpha()
 tiles = [tile_0, tile_1, tile_2, tile_3, tile_4, tile_5]
 
 while True:
