@@ -14,7 +14,7 @@ s_width = 1280
 # Tiles 
 t_x = 0
 t_y = 0
-t_height = 64
+t_height = 32
 t_width = t_height * 2
 
 # Screen Map Origin
@@ -26,7 +26,7 @@ m_side = 8
 
 screen = pygame.display.set_mode((s_width, s_height), 0, 32)
 pygame.display.set_caption('Tiles Test')
-tile = pygame.image.load('Cube.png').convert_alpha()
+tile = pygame.image.load('Assets\Cube64.png').convert_alpha()
 
 while True:
 

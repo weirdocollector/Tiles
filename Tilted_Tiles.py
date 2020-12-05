@@ -26,7 +26,7 @@ m_side = 8
 
 screen = pygame.display.set_mode((s_width, s_height), 0, 32)
 pygame.display.set_caption('Tiles Test')
-tile = pygame.image.load('Flat_Tile.png').convert_alpha()
+tile = pygame.image.load('Assets\Flat_Tile.png').convert_alpha()
 
 while True:
 
