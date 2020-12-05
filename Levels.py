@@ -102,9 +102,10 @@ while True:
             for m_y in range(m_sides):
                 s_x = (m_x - m_y) * t_width //2 + s_origin_x 
                 s_y = (m_x + m_y) * t_height //2 + (s_origin_y- t_height * m_z)
-                screen.blit(tiles[map_screen[m_z][m_x][m_y]],(s_x, s_y)) 
-                if m_pickups[m_z][m_x][m_y] != 0:
-                    screen.blit(pickup[m_pickups[m_z][m_x][m_y]],(s_x, s_y - t_height //2)) 
+                if map_screen[m_z][m_x][m_y] != 5:  # Only draw non-empty tiles
+                    screen.blit(tiles[map_screen[m_z][m_x][m_y]],(s_x, s_y)) 
+                    if m_pickups[m_z][m_x][m_y] != 0:  # Only draw non-empty pickups
+                        screen.blit(pickup[m_pickups[m_z][m_x][m_y]],(s_x, s_y - t_height //2)) 
                 # sleep(0.2)
                 # pygame.display.update()
 
