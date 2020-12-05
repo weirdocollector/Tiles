@@ -29,7 +29,9 @@ for level in range (8): # Initialize eight map screen levels
 
 # Tiles Map
 m_sides = 8
-m_tiles_0 = [[1,1,1,1,1,1,1,1], 
+m_tiles = [None] * 8 # Level Tiles
+
+m_tiles[0]= [[1,1,1,1,1,1,1,1], 
              [1,0,0,1,1,0,0,1],
              [1,0,0,3,3,0,0,1],
              [1,0,0,2,2,0,0,1],
@@ -38,7 +40,7 @@ m_tiles_0 = [[1,1,1,1,1,1,1,1],
              [1,0,0,0,0,0,0,1],
              [1,1,1,0,0,1,1,1]]
 
-m_tiles_1 = [[1,5,5,5,5,5,5,1],
+m_tiles[1]= [[1,5,5,5,5,5,5,1],
              [5,5,5,5,5,5,5,5],
              [5,5,5,5,5,5,5,5],
              [5,5,5,5,5,5,5,5],
@@ -48,8 +50,8 @@ m_tiles_1 = [[1,5,5,5,5,5,5,1],
              [1,5,5,5,5,5,5,1]]
 
 # for key in range (0):
-map_screen[0] = m_tiles_0
-map_screen[1] = m_tiles_1
+map_screen[0] = m_tiles[0]
+map_screen[1] = m_tiles[1]
 
 screen = pygame.display.set_mode((s_width, s_height), 0, 32)
 pygame.display.set_caption('Tiles Test')
