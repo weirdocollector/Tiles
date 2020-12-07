@@ -14,8 +14,8 @@ s_width = 1280
 # Tiles 
 t_x = 0
 t_y = 0
-t_height = 64
-t_width = t_height * 2
+t_height = 64               # Tiles half height in pxs
+t_width = t_height * 2      # Tiles are squares
 
 # Screen Map Origin
 s_origin_x = s_width //2 - t_width //2                      # Middle X axis
@@ -50,23 +50,23 @@ m_tiles[1]= [[1,5,5,5,5,5,5,1],
              [5,5,5,5,5,5,5,5],
              [1,5,5,5,5,5,5,1]]
 
-m_pickups[0]= [[0,0,0,0,0,0,0,0], 
-               [0,1,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0],
-               [0,1,0,0,0,1,0,0],
-               [0,0,0,0,0,0,0,0],
-               [0,0,0,0,0,0,0,0],
+m_pickups[0]= [[0,0,0,1,0,0,0,0], 
+               [0,1,0,1,0,0,0,0],
+               [0,0,0,1,0,0,0,0],
+               [1,1,0,1,0,1,0,0],
+               [1,0,0,1,0,0,0,0],
+               [1,0,0,0,0,0,0,0],
                [0,1,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0]]             
 
-m_pickups[1]= [[0,0,0,0,0,0,1,0], 
+m_pickups[1]= [[0,0,0,0,0,0,0,0], 
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
                [0,0,0,0,0,0,0,0],
-               [0,1,0,0,0,0,1,0]]  
+               [1,0,0,0,0,0,0,1]]  
 
 # for key in range (0):
 map_screen[0] = m_tiles[0]
@@ -87,6 +87,20 @@ pickup_0 = pygame.image.load('Assets/Empty_Tile.png').convert_alpha()
 pickup_1 = pygame.image.load('Assets/Jewel.png').convert_alpha()
 pickup = [pickup_0, pickup_1]
 
+spin_top = pygame.image.load('Assets/Spin_Top.png').convert_alpha()
+
+# Function defs
+
+def jewel_height(tile_height, tile_type):
+    positions ={
+        0: tile_height //2,
+        1: tile_height *(3/2),
+        2: tile_height,
+        3: tile_height *(5/4),
+        4: tile_height *(3/4),
+    }
+    return positions.get(tile_type,0)
+
 while True:
 
     for event in pygame.event.get():
@@ -104,10 +118,16 @@ while True:
                 s_y = (m_x + m_y) * t_height //2 + (s_origin_y- t_height * m_z)
                 if map_screen[m_z][m_x][m_y] != 5:  # Only draw non-empty tiles
                     screen.blit(tiles[map_screen[m_z][m_x][m_y]],(s_x, s_y)) 
+                # else:
+                #     continue    
                 if m_pickups[m_z][m_x][m_y] != 0:  # Only draw non-empty pickups
-                    screen.blit(pickup[m_pickups[m_z][m_x][m_y]],(s_x, s_y - t_height //2)) 
+                    screen.blit(pickup[m_pickups[m_z][m_x][m_y]],(s_x, s_y - jewel_height(t_height, map_screen[m_z][m_x][m_y]))) 
+                # else:
+                #     continue    
                 # sleep(0.2)
                 # pygame.display.update()
+                
+# or m_pickups[m_z][m_x][m_y] != 1
 
     # s_map_x = (x / int(t_width/2) + y / int(t_height/2))/2 
     # s_map_y = (y / int(t_height/2) + x / int(t_width/2))/2
