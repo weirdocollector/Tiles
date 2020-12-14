@@ -26,7 +26,7 @@ s_origin_y = s_height //2 - t_height //2 - t_height*3.5     # Middle Y axis - Of
 map_screen ={}
 
 for level in range (8): # Initialize eight map screen levels
-    map_screen[level]= []
+    map_screen[level]= [] 
 
 # Tiles Map
 m_sides = 8
