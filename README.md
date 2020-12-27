@@ -1,2 +1,2 @@
 # Tiles
-Experimenting with isometric tiles with Pygame
+Learning Python and Pygame writing a Spindizzy-like isometric game
