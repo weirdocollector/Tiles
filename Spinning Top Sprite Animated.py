@@ -69,6 +69,9 @@ def main():
     # Loop until the user clicks the close button.
     done = False
 
+    # Hide mouse pointer
+    pygame.mouse.set_visible(False)
+
     # -------- Main Program Loop -----------
     while not done:
         # ALL EVENT PROCESSING SHOULD GO BELOW THIS COMMENT
